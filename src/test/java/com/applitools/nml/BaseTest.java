@@ -1,7 +1,7 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.BatchInfo;
-import com.applitools.eyes.Configuration;
+import com.applitools.eyes.config.Configuration;
 import com.applitools.eyes.appium.Eyes;
 import io.appium.java_client.android.AndroidDriver;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -53,7 +53,7 @@ public class BaseTest {
         caps.setCapability("appium:app",               appPath);
         caps.setCapability("appium:appPackage",        appPackage);
         caps.setCapability("appium:appActivity",       appActivity);
-        caps.setCapability("appium:noReset",           false);
+        caps.setCapability("appium:fullReset",         true);
         caps.setCapability("appium:newCommandTimeout", 300);
 
         AndroidDriver driver = new AndroidDriver(new URL(APPIUM_URL), caps);
