@@ -1,6 +1,7 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.appium.Eyes;
+import com.applitools.eyes.selenium.fluent.Target;
 import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -19,7 +20,6 @@ public class AccessibilityTest extends BaseTest {
     public void tearDown() throws Exception {
         if (eyes   != null) eyes.abortIfNotClosed();
         if (driver != null) driver.quit();
-        // Reset font scale to default after each test
         setFontScale("1.0");
     }
 
@@ -31,7 +31,7 @@ public class AccessibilityTest extends BaseTest {
 
         Thread.sleep(2000);
         eyes.open(driver, EYES_APP_NAME, "Accessibility - Normal Font Size");
-        eyes.checkWindow("Normal Font");
+        eyes.check(Target.window().withName("Normal Font"));
         eyes.close();
     }
 
@@ -43,7 +43,7 @@ public class AccessibilityTest extends BaseTest {
 
         Thread.sleep(2000);
         eyes.open(driver, EYES_APP_NAME, "Accessibility - Large Font Size");
-        eyes.checkWindow("Large Font");
+        eyes.check(Target.window().withName("Large Font"));
         eyes.close();
     }
 }

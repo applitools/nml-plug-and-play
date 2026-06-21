@@ -1,6 +1,7 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.appium.Eyes;
+import com.applitools.eyes.selenium.fluent.Target;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -34,7 +35,7 @@ public class AnalyticsXTest extends BaseTest {
     public void loginFlow() throws Exception {
         Thread.sleep(2000);
         eyes.open(driver, EYES_APP_NAME, "AnalyticsX - Login");
-        eyes.checkWindow("Login Screen");
+        eyes.check(Target.window().withName("Login Screen"));
 
         WebElement loginButton = driver.findElement(
                 AppiumBy.androidUIAutomator("new UiSelector().text(\"Login\")")
@@ -42,7 +43,7 @@ public class AnalyticsXTest extends BaseTest {
         loginButton.click();
         Thread.sleep(2000);
 
-        eyes.checkWindow("Post Login");
+        eyes.check(Target.window().withName("Post Login"));
         eyes.close();
     }
 }
