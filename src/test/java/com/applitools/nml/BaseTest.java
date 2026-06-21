@@ -1,6 +1,7 @@
 package com.applitools.nml;
 
 import com.applitools.eyes.BatchInfo;
+import com.applitools.eyes.Configuration;
 import com.applitools.eyes.appium.Eyes;
 import io.appium.java_client.android.AndroidDriver;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -61,9 +62,13 @@ public class BaseTest {
     }
 
     protected Eyes createEyes() {
+        Configuration config = new Configuration();
+        config.setApiKey(APPLITOOLS_API_KEY);
+        config.setBatch(batch);
+        config.setSendDom(true);
+
         Eyes eyes = new Eyes();
-        eyes.setApiKey(APPLITOOLS_API_KEY);
-        eyes.setBatch(batch);
+        eyes.setConfiguration(config);
         return eyes;
     }
 
