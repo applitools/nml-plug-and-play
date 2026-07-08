@@ -1,8 +1,10 @@
 ## Native Mobile Library
 
+Branches are named by test vendor/environment, then language, framework, and platform:
 
-Refer to branch name which contains NMl related project
-<language>-<framework>-nml-<platform>-<vendor>
+```
+<vendor-or-local>/<language>-<framework>-<platform>[-multi-device]
+```
 
 ### Sample Applications
 
@@ -13,115 +15,146 @@ Sample applications (iOS Native and Android Native) are available in the **main*
 
 ### Java Appium — iOS
 
-  java-appium-nml-ios-local
-  
-  java-appium-nml-ios-multi-device
-  
-  java-appium-nml-ios-lambdatest
-  
-  java-appium-nml-ios-multi-device-lambdatest
-  
-  java-appium-nml-ios-perfecto
-  
-  java-appium-nml-ios-multi-device-perfecto
-  
-  java-appium-nml-ios-saucelabs
-  
-  java-appium-nml-ios-multi-device-saucelabs
-  
-  java-appium-nml-ios-browserstack
-  
-  java-appium-nml-ios-multi-device-browserstack
+  local/java-appium-ios
 
+  local/java-appium-ios-multi-device
 
+  lambdatest/java-appium-ios
 
-  ### Java Appium — Android
+  lambdatest/java-appium-ios-multi-device
 
-  java-appium-nml-android-local
-  
-  java-appium-nml-android-multi-device
-  
-  java-appium-nml-android-lambdatest
-  
-  java-appium-nml-android-multi-device-lambdatest
-  
-  java-appium-nml-android-perfecto
-  
-  java-appium-nml-android-multi-device-perfecto
-  
-  java-appium-nml-android-saucelabs
-  
-  java-appium-nml-android-multi-device-saucelabs
-  
-  java-appium-nml-android-browserstack
-  
-  java-appium-nml-android-multi-device-browserstack
+  perfecto/java-appium-ios
 
+  perfecto/java-appium-ios-multi-device
 
+  saucelabs/java-appium-ios
 
-  ### JavaScript WDIO Appium — iOS
+  saucelabs/java-appium-ios-multi-device
 
-  javascript-wdio-appium-nml-ios-local
-  
-  javascript-wdio-appium-nml-ios-multi-device
-  
-  javascript-wdio-appium-nml-ios-lambdatest
-  
-  javascript-wdio-appium-nml-ios-multi-device-lambdatest
-  
-  javascript-wdio-appium-nml-ios-perfecto
-  
-  javascript-wdio-appium-nml-ios-multi-device-perfecto
-  
-  javascript-wdio-appium-nml-ios-saucelabs
-  
-  javascript-wdio-appium-nml-ios-multi-device-saucelabs
-  
-  javascript-wdio-appium-nml-ios-browserstack
-  
-  javascript-wdio-appium-nml-ios-multi-device-browserstack
+  browserstack/java-appium-ios
 
+  browserstack/java-appium-ios-multi-device
 
+### Java Appium — Android
 
+  local/java-appium-android
 
-  ### JavaScript WDIO Appium — Android
-  
-  javascript-wdio-appium-nml-android-local
-  
-  javascript-wdio-appium-nml-android-multi-device
-  
-  javascript-wdio-appium-nml-android-lambdatest
-  
-  javascript-wdio-appium-nml-android-multi-device-lambdatest
-  
-  javascript-wdio-appium-nml-android-perfecto
-  
-  javascript-wdio-appium-nml-android-multi-device-perfecto
-  
-  javascript-wdio-appium-nml-android-saucelabs
-  
-  javascript-wdio-appium-nml-android-multi-device-saucelabs
+  local/java-appium-android-multi-device
 
+  lambdatest/java-appium-android
 
+  lambdatest/java-appium-android-multi-device
 
-  ### Maestro — iOS
+  perfecto/java-appium-android
 
-  maestro-nml-ios-local
-  
-  maestro-nml-ios-multi-device
-  
-  maestro-nml-ios-lambdatest
-  
-  maestro-nml-ios-multi-device-lambdatest
-  
-  maestro-nml-ios-perfecto
-  
-  maestro-nml-ios-multi-device-perfecto
-  
-  maestro-nml-ios-saucelabs
-  
-  maestro-nml-ios-multi-device-saucelabs
-  
-  maestro-nml-ios-browserstack
-  
-  maestro-nml-ios-multi-device-browserstack
+  perfecto/java-appium-android-multi-device
+
+  saucelabs/java-appium-android
+
+  saucelabs/java-appium-android-multi-device
+
+  browserstack/java-appium-android
+
+  browserstack/java-appium-android-multi-device
+
+### JavaScript WDIO Appium — iOS
+
+  local/javascript-wdio-appium-ios
+
+  local/javascript-wdio-appium-ios-multi-device
+
+  lambdatest/javascript-wdio-appium-ios
+
+  lambdatest/javascript-wdio-appium-ios-multi-device
+
+  perfecto/javascript-wdio-appium-ios
+
+  perfecto/javascript-wdio-appium-ios-multi-device
+
+  saucelabs/javascript-wdio-appium-ios
+
+  saucelabs/javascript-wdio-appium-ios-multi-device
+
+  browserstack/javascript-wdio-appium-ios
+
+  browserstack/javascript-wdio-appium-ios-multi-device
+
+### JavaScript WDIO Appium — Android
+
+  local/javascript-wdio-appium-android
+
+  local/javascript-wdio-appium-android-multi-device
+
+  lambdatest/javascript-wdio-appium-android
+
+  lambdatest/javascript-wdio-appium-android-multi-device
+
+  perfecto/javascript-wdio-appium-android
+
+  perfecto/javascript-wdio-appium-android-multi-device
+
+  saucelabs/javascript-wdio-appium-android
+
+  saucelabs/javascript-wdio-appium-android-multi-device
+
+### TypeScript WDIO Appium — iOS
+
+  local/typescript-wdio-appium-ios
+
+  local/typescript-wdio-appium-ios-multi-device
+
+  lambdatest/typescript-wdio-appium-ios
+
+  lambdatest/typescript-wdio-appium-ios-multi-device
+
+  perfecto/typescript-wdio-appium-ios
+
+  perfecto/typescript-wdio-appium-ios-multi-device
+
+  saucelabs/typescript-wdio-appium-ios
+
+  saucelabs/typescript-wdio-appium-ios-multi-device
+
+  browserstack/typescript-wdio-appium-ios
+
+  browserstack/typescript-wdio-appium-ios-multi-device
+
+### TypeScript WDIO Appium — Android
+
+  local/typescript-wdio-appium-android
+
+  local/typescript-wdio-appium-android-multi-device
+
+  lambdatest/typescript-wdio-appium-android
+
+  lambdatest/typescript-wdio-appium-android-multi-device
+
+  perfecto/typescript-wdio-appium-android
+
+  perfecto/typescript-wdio-appium-android-multi-device
+
+  saucelabs/typescript-wdio-appium-android
+
+  saucelabs/typescript-wdio-appium-android-multi-device
+
+### Maestro — iOS
+
+  local/maestro-ios
+
+  local/maestro-ios-multi-device
+
+  lambdatest/maestro-ios
+
+  lambdatest/maestro-ios-multi-device
+
+  perfecto/maestro-ios
+
+  perfecto/maestro-ios-multi-device
+
+  saucelabs/maestro-ios
+
+  saucelabs/maestro-ios-multi-device
+
+  browserstack/maestro-ios
+
+  browserstack/maestro-ios-multi-device
