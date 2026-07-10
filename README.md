@@ -1,25 +1,19 @@
 # javascript-wdio-appium-nml-android-browserstack
+
+## Environment variables
+
+- `APPLITOOLS_API_KEY`
+- `BROWSERSTACK_USERNAME`
+- `BROWSERSTACK_ACCESS_KEY`
+- `BROWSERSTACK_APP_ANALYTICSX`
+- `BROWSERSTACK_APP_ACCESSIBILITY`
+- `ACTIVE_APP` (`analyticsx` or `accessibility`)
+- `DEVICE_NAME`
+- `PLATFORM_VERSION`
+- `FLOW` (`compact` or `full`, AnalyticsX only)
+
 ## Run
 
 ```
 npm test
 ```
-
-
-
-#### Upload application to Browser Stack
-Endpoint: POST https://api-cloud.browserstack.com/app-automate/upload
-
-Auth: HTTP Basic Auth — BROWSERSTACK_USERNAME : BROWSERSTACK_ACCESS_KEY
-
-Request: multipart/form-data with a file field (the .ipa/.apk)
-
-```
-  curl example:
-  curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_ACCESS_KEY" \
-    -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
-    -F "file=@/path/to/YourApp.apk"
-```
-
-  Response:
-  {"app_url":"bs://<app_id>"}

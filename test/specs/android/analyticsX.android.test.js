@@ -9,7 +9,7 @@ describe('AnalyticsX Android NML - BrowserStack', () => {
     eyes = new Eyes();
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_browserstack.log' });
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS BrowserStack | Static / Slicing Dynamic | NML | Android AnalyticsX'));
+    eyes.setBatch(new BatchInfo('JS BrowserStack | NML | Android AnalyticsX'));
     await eyes.open(browser, 'BrowserStack Android AnalyticsX App', 'Android AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
