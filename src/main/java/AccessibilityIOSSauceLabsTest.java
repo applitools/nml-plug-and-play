@@ -95,7 +95,7 @@ public class AccessibilityIOSSauceLabsTest {
         config.setSendDom(true);
         eyes.setConfiguration(config);
 
-        eyes.setBatch(new BatchInfo("Java Sauce Labs | NML | iOS Accessibility"));
+        eyes.setBatch(new BatchInfo("Java SauceLabs | NML | iOS Accessibility"));
 
         try {
 
