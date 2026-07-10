@@ -124,6 +124,8 @@ public class AccessibilityAndroidLambdaTest {
             eyes.check("Main Screen", Target.window());
             System.out.println("Checked: Main Screen");
 
+            eyes.check("Main Screen | Fully", Target.window().fully());
+
             eyes.close();
             System.out.println("Eyes closed");
 
