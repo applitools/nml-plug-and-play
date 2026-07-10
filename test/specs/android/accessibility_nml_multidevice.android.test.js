@@ -12,7 +12,7 @@ describe('Accessibility Android NML - LambdaTest', () => {
     config.setUseDom(true);
     config.setSendDom(true);
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS LambdaTest | NML Multi Device | Android Accessibility'));
+    config.setBatch(new BatchInfo('JS LambdaTest | NML | Android Accessibility | Multi Device'));
     config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25);
     eyes.setConfiguration(config);
 
