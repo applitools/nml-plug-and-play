@@ -117,6 +117,7 @@ public class AccessibilityIOSLambdaTest {
             eyes.check("Main Screen", Target.window().fully(false));
             System.out.println("Checked: Main Screen");
 
+            eyes.check("Main Screen | Fully", Target.window().fully());
 
             eyes.close();
             System.out.println("Eyes closed");
