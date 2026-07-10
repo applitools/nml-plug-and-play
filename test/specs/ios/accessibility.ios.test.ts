@@ -12,7 +12,7 @@ describe('Accessibility iOS NML - Perfecto', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Perfecto | Static/Slicing Dynamic | NML | iOS Accessibility'));
+    eyes.setBatch(new BatchInfo('TS Perfecto | Static/Slicing Dynamic | NML | iOS Accessibility | Multi Device'));
 
     await eyes.open(browser, 'Perfecto iOS Accessibility App', 'iOS Accessibility Validation');
     console.log('Eyes open');
