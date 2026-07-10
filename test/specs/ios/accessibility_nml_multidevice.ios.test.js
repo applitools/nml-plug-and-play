@@ -12,7 +12,7 @@ describe('Accessibility iOS NML - LambdaTest', () => {
     config.setUseDom(true);
     config.setSendDom(true);
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS LambdaTest | NML Multi Device | iOS Accessibility'));
+    config.setBatch(new BatchInfo('JS LambdaTest | Static/Slicing Dynamic | NML | iOS Accessibility | Multi Device'));
     config.addMultiDeviceTarget("iPhone 15 Pro Max", "iPhone 11 Pro", "iPhone 14 Pro", "iPhone 13");
     eyes.setConfiguration(config);
 
