@@ -12,7 +12,7 @@ describe('Accessibility iOS NML - BrowserStack', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS BrowserStack | Static / Slicing Dynamic | NML | iOS Accessibility'));
+    eyes.setBatch(new BatchInfo('JS BrowserStack | NML | iOS Accessibility'));
 
     await eyes.open(browser, 'BrowserStack iOS Accessibility App', 'iOS Accessibility Validation');
     console.log('Eyes open');

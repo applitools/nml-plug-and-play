@@ -9,7 +9,7 @@ describe('AnalyticsX iOS NML - BrowserStack', () => {
     eyes = new Eyes();
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_browserstack.log' });
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS BrowserStack | Static / Slicing Dynamic | NML | iOS AnalyticsX'));
+    eyes.setBatch(new BatchInfo('JS BrowserStack | NML | iOS AnalyticsX'));
     await eyes.open(browser, 'BrowserStack iOS AnalyticsX App', 'iOS AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
