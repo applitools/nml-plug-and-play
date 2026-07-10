@@ -12,7 +12,7 @@ describe('Accessibility iOS NML - LambdaTest', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS LambdaTest | Slicing Instrument | iOS Accessibility'));
+    eyes.setBatch(new BatchInfo('TS SauceLabs | NML | iOS Accessibility | Multi Device'));
 
     await eyes.open(browser, 'LambdaTest iOS Accessibility App', 'iOS Accessibility Validation');
     console.log('Eyes open');

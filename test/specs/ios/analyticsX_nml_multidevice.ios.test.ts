@@ -14,7 +14,7 @@ describe('AnalyticsX iOS NML - Multi Device', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    config.setBatch(new BatchInfo('TS LambdaTest | Slicing Instrument | iOS AnalyticsX | NML Multi Device'));
+    config.setBatch(new BatchInfo('TS SauceLabs | NML | iOS AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget('iPhone 15 Pro Max', 'iPhone 11 Pro', 'iPhone 13');
     eyes.setConfiguration(config);
 
