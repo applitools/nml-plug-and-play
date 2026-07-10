@@ -12,7 +12,7 @@ describe('AnalyticsX Android NML - Multi Device', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    config.setBatch(new BatchInfo('TS LambdaTest | Android AnalyticsX | NML Multi Device'));
+    config.setBatch(new BatchInfo('TS LambdaTest | NML | Android AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget('Galaxy S25');
 
     eyes.setConfiguration(config);

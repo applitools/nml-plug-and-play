@@ -14,7 +14,7 @@ describe('Accessibility Android NML - Multi Device', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS LambdaTest | Slicing Instrument | Android Accessibility | NML Multi Device'));
+    eyes.setBatch(new BatchInfo('TS LambdaTest | NML | Android Accessibility | Multi Device'));
 
     await driver.pause(5000);
 
