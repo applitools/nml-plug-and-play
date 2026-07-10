@@ -14,7 +14,7 @@ describe('Accessibility Android NML - LambdaTest', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS LambdaTest | Slicing Instrument | Android Accessibility'));
+    eyes.setBatch(new BatchInfo('JS LambdaTest | NML | Android Accessibility'));
 
     await eyes.open(browser, 'LambdaTest Android Accessibility App', 'Android Accessibility Validation');
     console.log('Eyes open');
