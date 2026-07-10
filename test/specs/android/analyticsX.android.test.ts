@@ -8,7 +8,7 @@ describe('AnalyticsX Android NML - Perfecto', () => {
   before(async () => {
     eyes = new Eyes();
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Perfecto | NML | AnalyticsX'));
+    eyes.setBatch(new BatchInfo('TS Perfecto | NML | Android AnalyticsX'));
     await eyes.open(browser, 'Perfecto Android AnalyticsX App', 'Android AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });

@@ -13,7 +13,7 @@ describe('Accessibility Android NML - Perfecto', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Perfecto | NML | Accessibility'));
+    eyes.setBatch(new BatchInfo('TS Perfecto | NML | Android Accessibility'));
 
     await eyes.open(browser, 'Perfecto Android Accessibility App', 'Android Accessibility Validation');
     console.log('Eyes open');
