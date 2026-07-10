@@ -102,7 +102,7 @@ public class AccessibilityAndroidSauceLabsMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Sauce Labs | Android Accessibility"));
+        config.setBatch(new BatchInfo("Java SauceLabs | NML | Android Accessibility | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(AndroidMultiDeviceTarget.Galaxy_S25(), AndroidMultiDeviceTarget.Galaxy_S25_Ultra(), AndroidMultiDeviceTarget.Pixel_9());
