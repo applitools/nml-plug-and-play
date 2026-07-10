@@ -8,7 +8,7 @@ describe('AnalyticsX Android NML - LambdaTest', () => {
   before(async () => {
     eyes = new Eyes();
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS LambdaTest | Android AnalyticsX'));
+    eyes.setBatch(new BatchInfo('TS SauceLabs | NML | Android AnalyticsX'));
     await eyes.open(browser, 'LambdaTest Android AnalyticsX App', 'Android AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
