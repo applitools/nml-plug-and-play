@@ -26,6 +26,8 @@ describe('Accessibility iOS NML - LambdaTest', () => {
     await eyes.check('Main Screen', Target.window());
     console.log('Checked: Main Screen');
 
+    await eyes.check('Main Screen | Fully', Target.window().fully());
+
     await eyes.close(false);
     console.log('Eyes closed');
   });
