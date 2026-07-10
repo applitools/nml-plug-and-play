@@ -14,7 +14,7 @@ describe('Accessibility Android NML - SauceLabs', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
-    eyes.setBatch(new BatchInfo('JS SauceLabs | NML Multi Device| Android Accessibility'));
+    eyes.setBatch(new BatchInfo('JS SauceLabs | NML | Android Accessibility | Multi Device'));
 
     await driver.pause(5000);
 

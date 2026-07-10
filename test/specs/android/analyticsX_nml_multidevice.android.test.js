@@ -13,7 +13,7 @@ describe('AnalyticsX Android NML - SauceLabs', () => {
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
-    config.setBatch(new BatchInfo('JS SauceLabs | NML Multi Device | Android AnalyticsX'));
+    config.setBatch(new BatchInfo('JS SauceLabs | NML | Android AnalyticsX | Multi Device'));
     config.addMultiDeviceTarget("Galaxy S25","Galaxy S25 Ultra", "Pixel 9");
         
     eyes.setConfiguration(config);
