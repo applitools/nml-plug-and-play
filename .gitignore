@@ -1,0 +1,3 @@
+target/
+.DS_Store
+static_instrumented_sample_application/
