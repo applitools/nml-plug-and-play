@@ -12,7 +12,7 @@ describe('Accessibility Android NML - Local', () => {
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Local | Slicing Instrument | Android Accessibility'));
+    eyes.setBatch(new BatchInfo('TS Local | NML | Android Accessibility'));
 
     await eyes.open(browser, 'Local Android Accessibility App', 'Android Accessibility Validation');
     console.log('Eyes open');
