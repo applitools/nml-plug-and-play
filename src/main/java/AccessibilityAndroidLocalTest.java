@@ -92,7 +92,7 @@ public class AccessibilityAndroidLocalTest {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Local | Android Accessibility"));
+        config.setBatch(new BatchInfo("Java Local | NML | Android Accessibility"));
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);

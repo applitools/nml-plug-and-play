@@ -102,7 +102,7 @@ public class AnalyticsXAndroidLocalTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
-        config.setBatch(new BatchInfo("Java Local | Android AnalyticsX"));
+        config.setBatch(new BatchInfo("Java Local | NML | Android AnalyticsX"));
         config.setUseDom(true);
         config.setSendDom(true);
         eyes.setConfiguration(config);
