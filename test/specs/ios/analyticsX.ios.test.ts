@@ -8,7 +8,7 @@ describe('AnalyticsX iOS NML - Local', () => {
   before(async () => {
     eyes = new Eyes();
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
-    eyes.setBatch(new BatchInfo('TS Local | iOS AnalyticsX'));
+    eyes.setBatch(new BatchInfo('TS Local | NML | iOS AnalyticsX'));
     await eyes.open(browser, 'Local iOS AnalyticsX App', 'iOS AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
