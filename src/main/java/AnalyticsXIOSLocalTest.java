@@ -116,7 +116,7 @@ public class AnalyticsXIOSLocalTest {
         eyes.setConfiguration(config);
 
 
-        eyes.setBatch(new BatchInfo("Java Local | iOS AnalyticsX"));
+        eyes.setBatch(new BatchInfo("Java Local | NML | iOS AnalyticsX"));
 
         try {
 

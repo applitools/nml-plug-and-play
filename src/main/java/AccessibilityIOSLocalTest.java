@@ -104,7 +104,7 @@ public class AccessibilityIOSLocalTest {
         config.setSendDom(true);
         eyes.setConfiguration(config);
 
-        eyes.setBatch(new BatchInfo("Java Local | iOS Accessibility"));
+        eyes.setBatch(new BatchInfo("Java Local | NML | iOS Accessibility"));
 
         try {
 
