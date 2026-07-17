@@ -8,7 +8,7 @@ describe('AnalyticsX iOS NML - Local', () => {
   before(async () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_local.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_local.log' });
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
     config.setBatch(new BatchInfo('JS Local | NML | iOS AnalyticsX | Multi Device'));
