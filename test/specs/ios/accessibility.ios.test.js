@@ -7,7 +7,6 @@ describe('Accessibility iOS NML - Local', () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_local.log' });
-     eyes.setLogHandler(new FileLogHandler(true, './logs/eyes.log', true));
     const config = new Configuration();
     config.setUseDom(true);
     config.setSendDom(true);
