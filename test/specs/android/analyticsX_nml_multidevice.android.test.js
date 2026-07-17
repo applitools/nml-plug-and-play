@@ -1,15 +1,16 @@
-import { Eyes, Target, BatchInfo, Configuration,  AndroidMultiDeviceTarget} from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo, Configuration,  AndroidMultiDeviceTarget} from '@applitools/eyes-webdriverio';
 
 const FLOW = process.env.FLOW ?? 'full';
 
 describe('AnalyticsX Android NML - Perfecto', () => {
-  let eyes;
+  let eyes, runner;
   let config;
 
   before(async () => {
 
-    eyes = new Eyes();
-     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_perfecto.log' });
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_perfecto.log' });
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
