@@ -9,8 +9,7 @@ const APPS: Record<string, { appUrl?: string; specs: string[] }> = {
   },
   accessibility: {
     appUrl: process.env.SAUCE_APP_ACCESSIBILITY,
-    // no multi-device variant exists for iOS accessibility yet — falls back to the plain spec
-    specs: ['./test/specs/ios/accessibility.ios.test.ts'],
+    specs: ['./test/specs/ios/accessibility_nml_multidevice.ios.test.ts'],
   },
 };
 

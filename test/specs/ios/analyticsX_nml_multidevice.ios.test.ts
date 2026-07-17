@@ -10,7 +10,7 @@ describe('AnalyticsX iOS NML - Multi Device', () => {
   before(async () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
 
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY as string);
@@ -18,7 +18,7 @@ describe('AnalyticsX iOS NML - Multi Device', () => {
     config.addMultiDeviceTarget('iPhone 15 Pro Max', 'iPhone 11 Pro', 'iPhone 13');
     eyes.setConfiguration(config);
 
-    await eyes.open(browser, 'LambdaTest iOS AnalyticsX App', 'iOS AnalyticsX Validation');
+    await eyes.open(browser, 'SauceLabs iOS AnalyticsX App', 'iOS AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
 

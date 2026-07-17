@@ -1,12 +1,14 @@
-import { Eyes, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
 
-describe('Accessibility iOS NML - LambdaTest', () => {
+describe('Accessibility iOS NML - Multi Device', () => {
   let eyes: Eyes;
+  let runner: ClassicRunner;
 
   before(async () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-    
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
+
     const config = new Configuration();
     config.setUseDom(true);
     config.setSendDom(true);
@@ -16,7 +18,7 @@ describe('Accessibility iOS NML - LambdaTest', () => {
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
     eyes.setBatch(new BatchInfo('TS SauceLabs | NML | iOS Accessibility | Multi Device'));
 
-    await eyes.open(browser, 'LambdaTest iOS Accessibility App', 'iOS Accessibility Validation');
+    await eyes.open(browser, 'SauceLabs iOS Accessibility App', 'iOS Accessibility Validation');
     console.log('Eyes open');
   });
 
