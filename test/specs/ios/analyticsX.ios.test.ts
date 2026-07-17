@@ -1,12 +1,14 @@
-import { Eyes, Target, BatchInfo } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo } from '@applitools/eyes-webdriverio';
 
 const FLOW = process.env.FLOW ?? 'full';
 
 describe('AnalyticsX iOS NML - LambdaTest', () => {
   let eyes: Eyes;
+  let runner: ClassicRunner;
 
   before(async () => {
-    eyes = new Eyes();
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
     eyes.setBatch(new BatchInfo('TS LambdaTest | Static/Slicing Dynamic | NML | iOS AnalyticsX'));
