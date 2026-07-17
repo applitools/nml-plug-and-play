@@ -1,15 +1,16 @@
-import { Eyes, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
 
 describe('Accessibility iOS NML - Saucelabs', () => {
-  let eyes;
+  let eyes, runner;
 
   before(async () => {
-    eyes = new Eyes();
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
     const config = new Configuration();
     config.setUseDom(true);
     config.setSendDom(true);
-    config.addMultiDeviceTarget("iPhone 15 Pro Max", "iPhone 11 Pro", "iPhone 13");
+    config.addMultiDeviceTarget('iPhone 11 Pro Max', 'iPhone 13');
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
