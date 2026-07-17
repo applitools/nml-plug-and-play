@@ -4,11 +4,13 @@ describe('Accessibility iOS NML - LambdaTest', () => {
   let eyes: Eyes;
 
   before(async () => {
-    eyes = new Eyes();
-
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
+    
     const config = new Configuration();
     config.setUseDom(true);
     config.setSendDom(true);
+    config.addMultiDeviceTarget('iPhone 11 Pro Max', 'iPhone 13');
     eyes.setConfiguration(config);
 
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
