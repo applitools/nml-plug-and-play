@@ -8,7 +8,7 @@ describe('AnalyticsX iOS NML - LambdaTest', () => {
   before(async () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_lambdatest.log' });
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
     config.setBatch(new BatchInfo('JS LambdaTest | Static/Slicing Dynamic | NML | iOS AnalyticsX | Multi Device'));
