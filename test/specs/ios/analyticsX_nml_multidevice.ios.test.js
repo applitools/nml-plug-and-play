@@ -8,7 +8,7 @@ describe('AnalyticsX iOS NML - Perfecto', () => {
   before(async () => {
     runner = new ClassicRunner();
     eyes = new Eyes(runner);
-     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_perfecto.log' });
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_perfecto.log' });
     config = new Configuration();
     config.setApiKey(process.env.APPLITOOLS_API_KEY);
     config.setBatch(new BatchInfo('JS Perfecto | Static/Slicing Dynamic | NML | iOS AnalyticsX | Multi Device'));
