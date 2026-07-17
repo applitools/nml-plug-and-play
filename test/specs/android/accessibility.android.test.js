@@ -1,10 +1,11 @@
-import { Eyes, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo, Configuration } from '@applitools/eyes-webdriverio';
 
 describe('Accessibility Android NML - Perfecto', () => {
-  let eyes;
+  let eyes, runner;
 
   before(async () => {
-    eyes = new Eyes();
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
     eyes.setLogHandler({ type: 'file', filename: './logs/eyes_perfecto.log' });
 
     const config = new Configuration();
