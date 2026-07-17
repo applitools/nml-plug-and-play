@@ -2,14 +2,15 @@ import { Eyes, Target, BatchInfo } from '@applitools/eyes-webdriverio';
 
 const FLOW = process.env.FLOW ?? 'full';
 
-describe('AnalyticsX Android NML - LambdaTest', () => {
+describe('AnalyticsX Android NML - SauceLabs', () => {
   let eyes: Eyes;
 
   before(async () => {
     eyes = new Eyes();
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
     eyes.setApiKey(process.env.APPLITOOLS_API_KEY as string);
     eyes.setBatch(new BatchInfo('TS SauceLabs | NML | Android AnalyticsX'));
-    await eyes.open(browser, 'LambdaTest Android AnalyticsX App', 'Android AnalyticsX Validation');
+    await eyes.open(browser, 'SauceLabs Android AnalyticsX App', 'Android AnalyticsX Validation');
     console.log('Eyes open — FLOW =', FLOW);
   });
 
