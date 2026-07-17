@@ -1,11 +1,12 @@
-import { Eyes, Target, BatchInfo, Configuration, AndroidMultiDeviceTarget } from '@applitools/eyes-webdriverio';
+import { Eyes, ClassicRunner, Target, BatchInfo, Configuration, AndroidMultiDeviceTarget } from '@applitools/eyes-webdriverio';
 
 describe('Accessibility Android NML - SauceLabs', () => {
-  let eyes;
+  let eyes, runner;
 
   before(async () => {
-    eyes = new Eyes();
-      eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
+    runner = new ClassicRunner();
+    eyes = new Eyes(runner);
+    eyes.setLogHandler({ type: 'file', filename: './logs/eyes_saucelabs.log' });
 
     const config = new Configuration();
     config.setUseDom(true);
