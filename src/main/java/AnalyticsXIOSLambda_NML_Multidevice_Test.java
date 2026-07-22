@@ -48,6 +48,7 @@ public class AnalyticsXIOSLambda_NML_Multidevice_Test {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey      = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl   = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String ltUsername  = System.getenv("LT_USERNAME");
         String ltAccessKey = System.getenv("LT_ACCESS_KEY");
 
@@ -63,7 +64,7 @@ public class AnalyticsXIOSLambda_NML_Multidevice_Test {
         System.out.println("Capabilities set");
 
         // ── NML ─────────────────────────────────────────────────────────────
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -111,6 +112,9 @@ public class AnalyticsXIOSLambda_NML_Multidevice_Test {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setUseDom(true);
         config.setSendDom(true);
         config.addMultiDeviceTarget(IosMultiDeviceTarget.iPhone_11_Pro(), IosMultiDeviceTarget.iPhone_11_Pro_Max(), IosMultiDeviceTarget.iPhone_12());
