@@ -62,8 +62,8 @@ public class AccessibilityAndroidPerfectoTest {
 
         // ── NML ─────────────────────────────────────────────────────────────
         // appium:optionalIntentArguments stays a PLAIN top-level Appium capability on
-        // Perfecto (no vendor nesting needed) — we only need to
-        // drop the iOS-only processArguments cap.
+        // Perfecto (no vendor nesting needed). The iOS-only processArguments cap is
+        // left as-is too — Eyes.setMobileCapabilities() sets both unconditionally.
         Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
