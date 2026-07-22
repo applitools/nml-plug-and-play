@@ -50,6 +50,7 @@ public class AnalyticsXAndroidLambda_NMLMultidevice_Test {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey      = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl   = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String ltUsername  = System.getenv("LT_USERNAME");
         String ltAccessKey = System.getenv("LT_ACCESS_TOKEN");
 
@@ -72,7 +73,7 @@ public class AnalyticsXAndroidLambda_NMLMultidevice_Test {
         // Eyes.setMobileCapabilities injects BOTH optionalIntentArguments (Android)
         // AND processArguments (iOS) — we move optionalIntentArguments into lt:options
         // and delete processArguments (not needed for Android).
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -117,6 +118,9 @@ public class AnalyticsXAndroidLambda_NMLMultidevice_Test {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java LambdaTest | NML | Android AnalyticsX | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
