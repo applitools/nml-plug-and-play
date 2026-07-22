@@ -35,7 +35,6 @@ const caps = Eyes.setMobileCapabilities<Record<string, unknown>>({
 // Step 2: appium:processArguments stays as a plain Appium capability on Sauce Labs
 // (unlike LambdaTest, Sauce Labs does not require it to be nested under its vendor options).
 // appium:optionalIntentArguments is Android-only, so drop it for an iOS run.
-delete caps['appium:optionalIntentArguments'];
 
 // Step 3: Attach sauce:options
 // appiumVersion is required for iOS 17+ real devices, which Sauce only accepts over Appium 2 / W3C
