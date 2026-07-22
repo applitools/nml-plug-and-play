@@ -75,9 +75,9 @@ public class AnalyticsXAndroidLocalTest {
 
         // ── NML ─────────────────────────────────────────────────────────────
         // Eyes.setMobileCapabilities injects BOTH optionalIntentArguments (Android)
-        // AND processArguments (iOS). Against a local Appium server there is no vendor
-        // options object at all — optionalIntentArguments stays a plain top-level
-        // Appium capability — we only need to drop the iOS-only processArguments cap.
+        // AND processArguments (iOS), unconditionally, regardless of platform. Against
+        // a local Appium server there is no vendor options object at all, so both stay
+        // as plain top-level Appium capabilities, left as-is.
         Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
