@@ -45,6 +45,7 @@ public class AccessibilityAndroidBrowserStackTest {
         // ── Credentials ─────────────────────────────────────────────────────
         // Placeholders — no BrowserStack account/credentials exist in this workspace.
         String apiKey             = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl          = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String bstackUsername     = System.getenv("BROWSERSTACK_USERNAME");
         String bstackAccessKey    = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
@@ -64,7 +65,7 @@ public class AccessibilityAndroidBrowserStackTest {
         System.out.println("Capabilities set");
 
         // ── NML ─────────────────────────────────────────────────────────────
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -98,6 +99,9 @@ public class AccessibilityAndroidBrowserStackTest {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java BrowserStack | NML | Android Accessibility"));
         config.setUseDom(true);
         config.setSendDom(true);
