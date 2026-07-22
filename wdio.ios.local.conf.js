@@ -48,7 +48,6 @@ const caps = Eyes.setMobileCapabilities(baseCaps, process.env.APPLITOOLS_API_KEY
 // Step 2: appium:processArguments stays a plain Appium cap for a local Appium server
 // (no vendor nesting needed for a local run).
 // appium:optionalIntentArguments is Android-only, so drop it for an iOS run.
-delete caps['appium:optionalIntentArguments'];
 
 export const config = {
 
