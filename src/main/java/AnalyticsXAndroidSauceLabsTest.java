@@ -52,6 +52,7 @@ public class AnalyticsXAndroidSauceLabsTest {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey           = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl        = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String sauceUsername    = System.getenv("SAUCE_USERNAME");
         String sauceAccessKey   = System.getenv("SAUCE_ACCESS_KEY");
         String sauceRegion      = Optional.ofNullable(System.getenv("SAUCE_REGION")).orElse("us-west-1");
@@ -73,14 +74,12 @@ public class AnalyticsXAndroidSauceLabsTest {
 
         // ── NML ─────────────────────────────────────────────────────────────
         // Eyes.setMobileCapabilities injects BOTH optionalIntentArguments (Android)
-        // AND processArguments (iOS). On Sauce Labs, appium:optionalIntentArguments
-        // stays a PLAIN top-level Appium capability (no vendor nesting needed, unlike
-        // LambdaTest) — we only need to drop the iOS-only processArguments cap.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        // AND processArguments (iOS), unconditionally, regardless of platform. On
+        // Sauce Labs neither needs vendor-options nesting (unlike LambdaTest), so
+        // both stay as plain top-level Appium capabilities, left as-is.
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
-
-        capabilities.setCapability("appium:processArguments", (Object) null);
 
         // ── Attach sauce:options ──────────────────────────────────────────────
         Map<String, Object> sauceOptions = new HashMap<>();
@@ -112,6 +111,9 @@ public class AnalyticsXAndroidSauceLabsTest {
         Eyes eyes = new Eyes();
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java SauceLabs | NML | Android AnalyticsX"));
         config.setUseDom(true);
         config.setSendDom(true);

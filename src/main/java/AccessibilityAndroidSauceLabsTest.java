@@ -42,6 +42,7 @@ public class AccessibilityAndroidSauceLabsTest {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey           = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl        = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String sauceUsername    = System.getenv("SAUCE_USERNAME");
         String sauceAccessKey   = System.getenv("SAUCE_ACCESS_KEY");
         String sauceRegion      = Optional.ofNullable(System.getenv("SAUCE_REGION")).orElse("us-west-1");
@@ -63,13 +64,12 @@ public class AccessibilityAndroidSauceLabsTest {
 
         // ── NML ─────────────────────────────────────────────────────────────
         // appium:optionalIntentArguments stays a PLAIN top-level Appium capability on
-        // Sauce Labs (no vendor nesting needed, unlike LambdaTest) — we only need to
-        // drop the iOS-only processArguments cap.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        // Sauce Labs (no vendor nesting needed, unlike LambdaTest). The iOS-only
+        // processArguments cap is left as-is too — Eyes.setMobileCapabilities() sets
+        // both unconditionally, regardless of platform.
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
-
-        capabilities.setCapability("appium:processArguments", (Object) null);
 
         // ── Attach sauce:options ──────────────────────────────────────────────
         Map<String, Object> sauceOptions = new HashMap<>();
@@ -102,6 +102,9 @@ public class AccessibilityAndroidSauceLabsTest {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java SauceLabs | NML | Android Accessibility"));
         config.setUseDom(true);
         config.setSendDom(true);
