@@ -46,7 +46,7 @@ const ltOptions = {
   w3c: true,
 };
 
-// Step 3: Move processArguments into lt:options; remove Android cap (not needed for iOS)
+// Step 3: Move processArguments into lt:options.
 const processArguments = caps['appium:processArguments'];
 if (processArguments != null) {
   ltOptions.processArguments = processArguments;
