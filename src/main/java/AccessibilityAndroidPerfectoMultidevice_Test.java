@@ -41,6 +41,7 @@ public class AccessibilityAndroidPerfectoMultidevice_Test {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey             = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl          = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String perfectoCloudName = System.getenv("PERFECTO_CLOUD_NAME");
         String perfectoToken     = System.getenv("PERFECTO_SECURITY_TOKEN");
 
@@ -63,7 +64,7 @@ public class AccessibilityAndroidPerfectoMultidevice_Test {
         // appium:optionalIntentArguments stays a PLAIN top-level Appium capability on
         // Perfecto (no vendor nesting needed) — we only need to
         // drop the iOS-only processArguments cap.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -95,6 +96,9 @@ public class AccessibilityAndroidPerfectoMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setBatch(new BatchInfo("Java Perfecto | NML | Android Accessibility | Multi Device"));
         config.setUseDom(true);
         config.setSendDom(true);
