@@ -41,7 +41,6 @@ const caps = Eyes.setMobileCapabilities<Record<string, unknown>>({
 // Step 2: appium:optionalIntentArguments stays as a plain Appium capability on Perfecto
 // (no vendor nesting needed on Perfecto — the capability stays top-level).
 // appium:processArguments is iOS-only, so drop it for an Android run.
-delete caps['appium:processArguments'];
 
 // Step 3: Attach perfecto:options
 caps['perfecto:options'] = {
