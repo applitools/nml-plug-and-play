@@ -71,8 +71,6 @@ public class AccessibilityAndroidLocalTest {
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
-        capabilities.setCapability("appium:processArguments", (Object) null);
-
         // ── Driver ──────────────────────────────────────────────────────────
         System.out.println("Initialising AndroidDriver");
 
