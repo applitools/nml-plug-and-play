@@ -38,6 +38,7 @@ public class AccessibilityIOSSauceLabsMultidevice_Test {
 
         // ── Credentials ─────────────────────────────────────────────────────
         String apiKey          = System.getenv("APPLITOOLS_API_KEY");
+        String serverUrl       = System.getenv("APPLITOOLS_SERVER_URL"); // optional; defaults to Applitools public cloud if unset
         String sauceUsername    = System.getenv("SAUCE_USERNAME");
         String sauceAccessKey   = System.getenv("SAUCE_ACCESS_KEY");
         String sauceRegion      = Optional.ofNullable(System.getenv("SAUCE_REGION")).orElse("us-west-1");
@@ -59,7 +60,7 @@ public class AccessibilityIOSSauceLabsMultidevice_Test {
         // Eyes.setMobileCapabilities injects appium:processArguments. Sauce Labs
         // does not require it to be nested under sauce:options, so it stays a
         // plain top-level Appium capability.
-        Eyes.setMobileCapabilities(capabilities, apiKey);
+        Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
@@ -94,6 +95,9 @@ public class AccessibilityIOSSauceLabsMultidevice_Test {
 
         Configuration config = new Configuration();
         config.setApiKey(apiKey);
+        if (serverUrl != null) {
+            config.setServerUrl(serverUrl);
+        }
         config.setUseDom(true);
         config.setSendDom(true);
 
