@@ -64,9 +64,10 @@ public class AccessibilityAndroidLocalMultidevice_Test {
         System.out.println("Capabilities set");
 
         // ── NML ─────────────────────────────────────────────────────────────
-        // Against a local Appium server there is no vendor options object at all —
-        // optionalIntentArguments stays a plain top-level Appium capability — we only
-        // need to drop the iOS-only processArguments cap.
+        // Against a local Appium server there is no vendor options object at all.
+        // optionalIntentArguments stays a plain top-level Appium capability, and so
+        // does the iOS-only processArguments cap — Eyes.setMobileCapabilities() sets
+        // both unconditionally, regardless of platform.
         Eyes.setMobileCapabilities(capabilities, apiKey, serverUrl);
 
         System.out.println("Eyes.setMobileCapabilities() done");
