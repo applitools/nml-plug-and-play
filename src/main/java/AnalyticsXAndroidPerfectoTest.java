@@ -81,8 +81,6 @@ public class AnalyticsXAndroidPerfectoTest {
 
         System.out.println("Eyes.setMobileCapabilities() done");
 
-        capabilities.setCapability("appium:processArguments", (Object) null);
-
         // ── Attach perfecto:options ────────────────────────────────────────────
         Map<String, Object> perfectoOptions = new HashMap<>();
         perfectoOptions.put("securityToken", perfectoToken);
