@@ -51,7 +51,7 @@ const ltOptions: Record<string, unknown> = {
   w3c: true,
 };
 
-// Step 3: Move optionalIntentArguments into lt:options; remove iOS cap (not needed for Android)
+// Step 3: Move optionalIntentArguments into lt:options.
 const optionalIntentArguments = caps['appium:optionalIntentArguments'];
 if (optionalIntentArguments != null) {
   ltOptions.optionalIntentArguments = optionalIntentArguments;
