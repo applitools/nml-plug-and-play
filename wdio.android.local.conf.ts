@@ -40,7 +40,7 @@ const caps = Eyes.setMobileCapabilities<Record<string, unknown>>({
 
 // Step 2: appium:optionalIntentArguments stays a plain Appium cap for a local Appium server
 // (no vendor nesting needed for a local run).
-// appium:processArguments is iOS-only, so drop it for an Android run.
+// appium:processArguments (iOS-only) is left as-is too — Eyes.setMobileCapabilities() sets both unconditionally.
 
 export const config: WebdriverIO.Config = {
 
