@@ -1,0 +1,3 @@
+eyes-selenium==6.5.20
+Appium-Python-Client>=5.0
+pytest>=8.0
